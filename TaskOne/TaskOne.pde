@@ -44,11 +44,20 @@ void setup() {
   switch(monthNum) {
   
   // Months with 31 days
-  case 0: case 2: case 4: case 6: case 7: case 9: case 11: day = "31";
+  case 0: 
+  case 2: 
+  case 4: 
+  case 6: 
+  case 7: 
+  case 9: 
+  case 11: day = "31";
   break;
 
   // Months with 30 days
-  case 3: case 5: case 8: case 10: day = "30";
+  case 3: 
+  case 5: 
+  case 8: 
+  case 10: day = "30";
   break;
  
   // Febuary
