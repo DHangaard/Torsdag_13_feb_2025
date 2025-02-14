@@ -8,9 +8,6 @@ void setup() {
   methodTwo();
 }
 
-/*
-  The following method has an error in it. Fix the error and run it.
- */
 // 5.a
 void methodOne()
 {
@@ -18,18 +15,17 @@ void methodOne()
 
   int max = 10;
 
-  //Declare variable globally
-  String output;
+  //Declare and initialize variable globally
+  String output = null;
 
   // Added 'else' statement so code will run if i < max
   if (i > max)
   {
     output = "i is greater than "+max+".";
-  } else {
-    output = "i is not greater than "+max+".";
-  }
+  } 
+  
   println(output);
-  println(); // add space between 5.a and 5.b
+  println(); // Empty line
 }
 
 // 5.b
@@ -42,6 +38,7 @@ void methodTwo()
   // Added string to use in switch case
   String whatDay;
 
+  // If statement to determine if weekend
   if (weekDay < 5) {
     weekend = false;
   } else {
@@ -49,31 +46,40 @@ void methodTwo()
   }
 
   // Print the name of the weekday here:
+  // Switch case to initialize 'whatDay'
   switch(weekDay) {
   case 0:
     whatDay = "Monday";
     break;
+  
   case 1:
     whatDay = "Tueday";
     break;
+  
   case 2:
     whatDay = "Wednesday";
     break;
+  
   case 3:
     whatDay = "Thursday";
     break;
+  
   case 4:
     whatDay = "Friday";
     break;
+  
   case 5:
     whatDay = "Saturday";
     break;
+  
   case 6:
     whatDay = "Sunday";
     break;
+  
   default:
     whatDay = "[ERROR]";
   }
+  
   println("It is " + whatDay);
 
   // Print if it is weekend here:

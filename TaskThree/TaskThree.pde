@@ -13,9 +13,9 @@ int max = (int) random(1, 11);
 int sum = min + max;
 
 // 3.c
-int x = 18; //(int) random(1, 31); // Random int between 1 - 30
-int y = 1; //(int) random(1, 31);
-int z = 11; //(int) random(1, 31);
+int x = (int) random(1, 31); // Random int between 1 - 30
+int y = (int) random(1, 31);
+int z = (int) random(1, 31);
 int xyzSum = x + y + z;
 
 void setup() {
@@ -30,7 +30,7 @@ void setup() {
   println("b is " + b);
   println("a + b is " + c);
   println(succesFailure);
-  println();
+  println(); // Empty line
 
   // 3.b
   if (sum > 10 && (min <= 5 || max <= 5)) {
@@ -42,13 +42,13 @@ void setup() {
   println("max is " + max);
   println("min + max is " + sum);
   println(succesFailure);
-  println();
+  println(); // Empty line
 
   // 3.c
   // Shorten this if statement?
   // Should i use a variable?
   // Ask tutor thursday!
-  if (xyzSum == 30 && x != 10 && x != 20 && x != 30 && y != 10 && y != 20 && y != 30 && z != 10 && z != 20 && z != 30) {
+  if (xyzSum == 30 && (x%10!=0 && y%10!=0 && z%10!=0)) {
     succesFailure = "Success!";
   } else {
     succesFailure = "Failure!";

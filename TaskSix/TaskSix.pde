@@ -3,12 +3,11 @@
 
 /*
 Pseudocode:
- 1. oblong canvas with black background
+ 1. oblong canvas with white background + black rectangle
  2. three circles in width/2 and height/5 (2*height/5 and 3*height/5)
  3. color circles accordingly, but dim (start on red light)
- 4. when mousePressed, change light from red to green
- 5. use frameCount (or similar) to make transistion smooth
- - use switch case and modulus
+ 4. use frameCount (or similar) to make transistion smooth
+ 5. use switch case and modulus to assign color values in order
  */
 
 // 6.a
@@ -17,6 +16,11 @@ int red;
 int yellow;
 int green;
 
+// Name variables differently - use grey first!
+// greyRed
+// greyYellow
+// greyGreen
+// For easier readability
 int redGrey;
 int yellowGrey;
 int greenGrey;
@@ -26,18 +30,23 @@ int light1;
 int light2;
 int light3;
 
-int circleSize = 125;
+// Size
+int circleSize;
+int boxW;
+int boxH;
+
+// Placement
 int x;
 int topY;
 int midY;
 int bottomY;
 
 // 6.c
-// Use canvas as "box"
 void setup() {
   size(250, 600);
-  background(0);
+  background(255);
 
+  
   // Initialize variables
   // Bright colors
   red = color(255, 0, 0);
@@ -49,11 +58,21 @@ void setup() {
   yellowGrey = color(187, 187, 148);
   greenGrey = color(148, 187, 148);
 
-  // Placement and size
+  // Size
+  circleSize = width/2;
+  boxW = width-50;
+  boxH = height-50;
+  
+  // Placement
   x = width/2;
   topY = height/5;
   midY = height/2;
   bottomY = 4*height/5;
+  
+  // 6.c
+  rectMode(CENTER);
+  fill(0);
+  rect(x, midY, boxW, boxH);
 }
 
 // 6.d
@@ -63,7 +82,7 @@ void draw() {
   switch(frameCount%400) {
 
     // Red light
-    // Change case from 0 to one so red light displays immediately 
+    // Changed case from '0' to '1' so red light displays immediately 
   case 1:
     light1 = red;
     light2 = yellowGrey;

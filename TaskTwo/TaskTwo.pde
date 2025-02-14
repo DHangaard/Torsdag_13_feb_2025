@@ -13,13 +13,13 @@ String clapHands;
 
 void setup() {
   if (isHappy) {
-    clapHands = "I clap my hands";
+    clapHands = "";
   } else if (!isHappy) {
-    clapHands = "I don't clap my hands";
+    clapHands = "don't ";
   }
 
   // 2.d
   println("my name is " + name);
   println("I am " + age + " years old");
-  println(clapHands);
+  println("I " + clapHands + "clap my hands");
 }
